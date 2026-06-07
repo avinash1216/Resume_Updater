@@ -1,0 +1,147 @@
+\documentclass[letter,10pt]{article}
+\usepackage[utf8]{inputenc}
+
+%====================
+% FONTS & ENCODING
+%====================
+\RequirePackage[T1]{fontenc}
+\RequirePackage[default,semibold]{sourcesanspro}
+\RequirePackage[10pt]{moresize}
+\usepackage{anyfontsize}
+\RequirePackage{csquotes}
+
+%====================
+% MARGINS AND SPACING
+%====================
+\RequirePackage[margin=.5in, top=.5in, bottom=1in]{geometry}
+\raggedright
+\raggedbottom
+
+%====================
+% COLORS
+%====================
+\RequirePackage{xcolor}
+\definecolor{highlight}{RGB}{61, 90, 128}
+
+%====================
+% LINKS
+%====================
+\RequirePackage{hyperref}
+\hypersetup{colorlinks=true,urlcolor=highlight}
+
+%====================
+% BULLET POINTS & LISTS
+%====================
+\RequirePackage[inline]{enumitem}
+\setlength{\tabcolsep}{0in}
+
+\setlist[itemize]{align=parleft,left=0pt..1em}
+\newenvironment{zitemize}{
+\begin{itemize} \itemsep 0pt \parskip 0pt \parsep 1pt}
+{\end{itemize}\vspace{-.5em}}
+
+%====================
+% SECTION FORMATPING
+%====================
+\RequirePackage[nostruts]{titlesec}
+\titlespacing*{\section}{0em}{0.5em}{0em}
+\titleformat{\section}{\color{highlight} \scshape \raggedright \large}{}{0em}{}[\vspace{-0.75em}\hrulefill]
+
+\titlespacing*{\subsection}{0em}{0em}{0em}
+\titleformat{\subsection}{\bfseries}{}{0em}{}[]
+
+%====================
+% CUSTOM MACROS
+%====================
+\newcommand{\skills}[1]{ {\bfseries #1}}
+\newcommand{\subtext}[1]{\textit{#1}\par\vspace{-.75em}}
+
+\pagenumbering{gobble}
+
+%====================
+% HEADER DESIGN
+%====================
+\RequirePackage{fancyhdr}
+\fancypagestyle{fancy}{%
+\fancyhf{}
+\lhead{((( personal_info.phone ))) \\    
+        ((( personal_info.location ))) \\ 
+	    \href{mailto:((( personal_info.email )))}{((( personal_info.email )))}}
+\chead{%
+	\centering {\Huge \skills ((( personal_info.name ))) \vspace{.25em}} \\ 
+	{\color{highlight} \Large{((( personal_info.role | default('Data Engineer 2') )))}}}%
+\rhead{ \href{}{}\\ 
+	\href{https://github.com/((( personal_info.github )))}{github.com/((( personal_info.github )))} \\
+	\href{https://www.linkedin.com/in/((( personal_info.linkedin )))}{linkedin.com/in/((( personal_info.linkedin )))}}
+\renewcommand{\headrulewidth}{1pt}%
+\renewcommand{\headrule}{\hbox to\headwidth{%
+  \color{highlight}\leaders\hrule height \headrulewidth\hfill}}
+}
+\pagestyle{fancy}
+
+\setlength{\headheight}{90pt}
+\setlength{\headsep}{5pt}
+
+%====================================================
+% DOCUMENT BEGINS HERE
+%====================================================
+\begin{document}
+
+%-----------SUMMARY/OBJECTIVE-----------
+((* if summary *))
+((( summary )))
+\vspace{1em}
+((* endif *))
+
+%-----------TECHNICAL SKILLS-----------
+\section{Skills}
+\begin{tabular}{p{12em} p{1em} p{42em}}
+((* for skill_group in skills *))
+\skills{((( skill_group.category )))} & & ((( skill_group.skills | join(', ') ))) \\
+((* endfor *))
+\end{tabular}
+
+%-----------TECHNICAL EXPERIENCE-----------
+\section{Technical Experience}
+((* for exp in experience *))
+\subsection{{((( exp.role )))((* if exp.start_date *)) \hfill ((( exp.start_date ))) -- ((( exp.end_date )))((* endif *))}}
+\subtext{((( exp.company ))) \hfill ((( exp.location )))}
+\begin{zitemize}
+((* for bullet in exp.bullets *))
+\item ((( bullet )))
+((* endfor *))
+\end{zitemize}
+((* endfor *))
+
+%-----------PROJECTS-----------
+((* if projects *))
+\section{Projects}
+((* for proj in projects *))
+\subsection{{((( proj.name ))) \hfill \emph{((( proj.technologies | join(', ') )))}}}
+((* if proj.link *))\subtext{\href{((( proj.link )))}{Project Link}}((* endif *))
+\begin{zitemize}
+((* for bullet in proj.bullets *))
+\item ((( bullet )))
+((* endfor *))
+\end{zitemize}
+((* endfor *))
+((* endif *))
+
+%-----------EDUCATION-----------
+\section{Education}
+((* for edu in education *))
+\skills{((( edu.degree )))}, \textit{((( edu.institution ))), ((( edu.location )))}{ ((* if edu.gpa *))((* if '%' in edu.gpa *))Percentage: ((( edu.gpa )))((* else *))CGPA: ((( edu.gpa )))((* endif *))((* endif *))} \hfill ((( edu.graduation_date ))) \\
+((* endfor *))
+
+%-----------PERSONAL SKILLS & INTERESTS-----------
+((* if personal_skills or interests *))
+\section{Personal Skills \& Interests}
+((* if personal_skills *))
+\skills{Skills}, \textit{((( personal_skills | join(', ') )))} \\
+((* endif *))
+((* if interests *))
+\skills{Interests}, \textit{((( interests | join(', ') )))} \\
+((* endif *))
+((* endif *))
+
+\end{document}

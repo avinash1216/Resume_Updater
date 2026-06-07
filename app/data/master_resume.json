@@ -1,0 +1,110 @@
+{
+  "personal_info": {
+    "name": "Avinash Kumar",
+    "email": "avinash1216kapil@gmail.com",
+    "phone": "+91 79039 00177",
+    "location": "Hyderabad ,500032, India",
+    "linkedin": "avinash-kumar-a62037119",
+    "github": "avinash1216",
+    "website": null,
+    "role": "Data Engineer 2"
+  },
+  "education": [
+    {
+      "institution": "National Institute of Technology Calicut",
+      "location": "Kerala",
+      "degree": "M.Tech in Computer Science & Engineering",
+      "graduation_date": "Sep 2021 – Aug 2023",
+      "gpa": "8.38/10"
+    },
+    {
+      "institution": "Birsa Institute of Technology",
+      "location": "Sindri, Jharkhand",
+      "degree": "B.Tech in Computer Science and Engineering",
+      "graduation_date": "Aug 2016 -- Jun 2020",
+      "gpa": "7.99"
+    },
+    {
+      "institution": "Chinmaya Vidyalaya",
+      "location": "B.S. City, Jharkhand",
+      "degree": "Higher Secondary",
+      "graduation_date": "Aug 2013 -- Jun 2015",
+      "gpa": "93%"
+    }
+  ],
+  "experience": [
+    {
+      "company": "Micron Technologies",
+      "location": "Hyd, Telangana",
+      "role": "Utility Trade Reports (UTR) Pipeline",
+      "start_date": "Dec 2024",
+      "end_date": "Present",
+      "bullets": [
+        "Designed an efficient pipeline that converts raw fab data into actionable utility trade ratios, reducing report generation time and manual intervention.",
+        "Utilized GCP services (Cloud Functions, BigQuery, Pub/Sub, Workflows) and FastAPI to deliver real-time insights, ensuring rapid and reliable data access for manufacturing decisions.",
+        "Implemented automated data validation and error-handling measures, enhancing data integrity and reducing downstream processing delays.",
+        "Optimized SQL stored procedures and scheduling processes to significantly reduce report generation times and manual intervention."
+      ]
+    },
+    {
+      "company": "Micron Technologies",
+      "location": "Hyd, Telangana",
+      "role": "NPI Sales Order Pipeline",
+      "start_date": "July 2024",
+      "end_date": "Nov 2024",
+      "bullets": [
+        "Engineered an end-to-end automated pipeline to validate process codes and verify product availability, replacing time-consuming manual processes.",
+        "Leveraged Snowflake and GCP Scheduler to streamline data processing, significantly shortening the turnaround time for inventory checks and order validations."
+      ]
+    },
+    {
+      "company": "Micron Technologies",
+      "location": "Hyd, Telangana",
+      "role": "ETL Automation & Data Migration",
+      "start_date": "July 2023",
+      "end_date": "June 2024",
+      "bullets": [
+        "Automated manual DDL rewriting and ETL migration from MSSQL, Oracle, and SAP HANA to Snowflake, drastically reducing manual effort and errors.",
+        "Developed robust Python scripts with comprehensive logging and error-handling, standardizing data workflows and improving overall deployment speed.",
+        "Automated synchronization of DDL changes across development, test, and production environments, significantly minimizing downtime and ensuring consistent deployment."
+      ]
+    },
+    {
+      "company": "Micron Technologies",
+      "location": "Hyd, Telangana",
+      "role": "Advanced Automation & AI Integration",
+      "start_date": null,
+      "end_date": null,
+      "bullets": [
+        "Integrated parallel processing with Ray to accelerate large-scale ETL operations, dramatically cutting overall processing times.",
+        "Deployed generative AI workflows using LLMs and RAG-based systems to automate routine tasks, further enhancing pipeline efficiency."
+      ]
+    }
+  ],
+  "projects": [],
+  "skills": [
+    {
+      "category": "Programming Languages",
+      "skills": ["Python", "SQL", "C", "C++"]
+    },
+    {
+      "category": "Database & Data Warehousing",
+      "skills": ["Snowflake", "MSSQL", "Oracle", "SAP HANA", "Big Query"]
+    },
+    {
+      "category": "Cloud Technologies",
+      "skills": ["Google Cloud Platform (BigQuery, Cloud Functions, Pub/Sub, Secret Manager, Scheduler, Workflows)"]
+    },
+    {
+      "category": "APIs & Frameworks",
+      "skills": ["FastAPI"]
+    },
+    {
+      "category": "Generative AI",
+      "skills": ["LLMs", "RAG-based systems"]
+    }
+  ],
+  "summary": "Results-driven Data Engineer with close to 2 years of experience at Micron Technology, specializing in automating ETL processes, migrating multi-source datasets to Snowflake, and building scalable data pipelines using Python, SQL, and GCP services. Demonstrated expertise in streamlining operations through innovative solutions, including parallel processing for large datasets and reusable pipelines, while addressing diverse data scenarios. Proven ability to design seamless workflows, leveraging advanced programming techniques and strong problem-solving skills. Adept at integrating cutting-edge technologies, including generative AI tools and large language models, to automate workflows and enhance productivity.",
+  "personal_skills": ["Team collaboration", "effective communication", "analytical thinking", "adaptability"],
+  "interests": ["Exploring emerging technologies", "Travelling", "Building"]
+}
